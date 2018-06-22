@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" >
+  <div fxLayout="row" fxFlex="100"> 
+    <div fxFlex="95">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>VPL</span>
+    </div>
+
+    <div fxFlex="5">
+      <button mat-button mat-mini-fab mat-icon-button style="background-color:inherit" [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu>
+        <div style="margin:10px;">
+          <button mat-icon-button mat-mini-fab style="background-color:inherit">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+        </div>
+        <div fxFlex="100">
+          <button mat-raised-button style="background-color:inherit">Logout</button>
+        </div>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container >
+  <mat-sidenav #drawer class="sidenav" 
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' :  'side'"
+               [opened]="!(isHandset$ | async)">
+        <div fxLayout="column">
+      <button mat-button mat-raised-button  fxFlex="90" fxLayoutAlign="start center" color="primary" >Learners</button>
+      <button mat-button mat-list-item  fxFlex="90" fxLayoutAlign="start center" (click)="openDialog()">Firstname Lastname</button>
+    </div>
+    
+
+  </mat-sidenav>
+  <mat-sidenav-content style="height:100vh">
+    
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

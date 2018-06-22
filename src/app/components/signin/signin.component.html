@@ -1,0 +1,37 @@
+<!--<p>
+  Sign in Worlks
+</p>-->
+<body style="margin:0">
+  <!--<mat-toolbar style="background-color:royalblue">
+    <div style="color:white">VPL</div>
+  </mat-toolbar>-->
+  <div fxLayoutAlign="center center " style="margin-top:25vh">
+
+    <mat-card fxFlex.lg="35" fxFlex.md="45" fxFlex.sm="60" fxFlex.lt-sm="80" fxFlex.xs="90">
+      <div fxLayout="column">
+        <div align="center">
+          <h3>Login</h3>
+        </div>
+        <form #signinform="ngForm" (ngSubmit)="login()">
+          <div fxFlex="100" fxLayout="column">
+            <mat-form-field>
+              <input type="email" matInput placeholder="Username" name="email" [formControl]="email" [(ngModel)]="model.email" required  />
+              <mat-error *ngIf="email.invalid">{{getErrorMessage1()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Your Password" name="password" [formControl]="password" required [(ngModel)]="model.password" />
+              <mat-error *ngIf="password.invalid">{{getErrorMessage2()}}</mat-error>
+            </mat-form-field>
+            <button mat-button mat-raised-button style="background-color:#3f51b5;color:white">Login</button>
+          </div>
+
+        </form>
+
+      </div>
+      <div align="right">
+        <button mat-button style="color:royalblue">Forgot Password</button>
+      </div>
+    </mat-card>
+  </div>
+
+</body>

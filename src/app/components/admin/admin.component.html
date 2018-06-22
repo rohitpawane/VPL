@@ -1,0 +1,28 @@
+<!--<p>
+  signup works!
+</p>-->
+  <mat-toolbar color="primary" >
+    <div fxFlex="95">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="sidenav.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>VPL</span>
+    </div>
+
+  </mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened  [mode]="screenWidth > 840 ? 'side' : 'over' " class="sidenav" >
+    <div fxLayout="column" fxFlex="100">
+      <button mat-button routerLink="/admin/reg">Register Learner</button>
+      
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content style="height:100vh">
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

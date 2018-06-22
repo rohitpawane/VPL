@@ -1,0 +1,59 @@
+<!--<p>
+  signup works!
+</p>-->
+<div fxLayoutAlign="center center" style="margin-top:20vh;">
+  <mat-card fxFlex.lg="45" fxFlex.md="60" fxFlex.sm="75" fxFlex.xs="80" style="padding-bottom:5vh">
+    <div fxLayout="column" fxFlex="100" align="left">
+      <span style="font-weight:600;font-size:20px">Register</span>
+      <div fxLayout="column" fxFlex="100">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100" fxFlex.xs="100">
+          <mat-form-field fxFlex>
+            <input type="text" matInput placeholder="Firstname" />
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input type="text" matInput placeholder="Lastname" />
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+          <mat-form-field fxFlex>
+            <input type="email" matInput placeholder="Email" />
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input type="text" matInput placeholder="Duration" />
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+          <mat-form-field fxFlex>
+            <input matInput [matDatepicker]="startdate" placeholder="Start Date" />
+            <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
+            <mat-datepicker #startdate></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input matInput [matDatepicker]="enddate" placeholder="Start Date" />
+            <mat-datepicker-toggle matSuffix [for]="enddate"></mat-datepicker-toggle>
+            <mat-datepicker #enddate></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+          <mat-form-field fxFlex>
+            <mat-select placeholder="Fellowship Program">
+              <mat-option *ngFor="let program of fellowshipprogram" [value]="program">{{program}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxFlex="100">
+          <mat-form-field fxFlex>
+            <input type="text" matInput placeholder="City" />
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input type="text" matInput placeholder="Company" />
+          </mat-form-field>
+        </div>
+        <div fxLayoutAlign="end center" fxLayoutGap="10px">
+          <button mat-button mat-raised-button color="primary">Save</button>
+          <button mat-button mat-raised-button color="primary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
